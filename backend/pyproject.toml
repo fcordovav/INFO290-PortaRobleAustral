@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "roble"
+version = "0.1.0"
+description = ""
+authors = ["handel123 <handel.venegas@alumnos.uach.cl>"]
+readme = "README.md"
+package-mode = false
+
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.115.6"
+uvicorn = "^0.32.1"
+pymongo = "^4.10.1"
+pylance = "^0.20.0"
+python-dotenv = "^1.0.1"
+httpx = "^0.28.0"
+python-multipart = "^0.0.19"
+python-jose = {extras = ["cryptography"], version = "^3.3.0"}
+passlib = {extras = ["bcrypt"], version = "^1.7.4"}
+
+[tool.poetry.scripts]
+start = "uvicorn main:app --port 4008 --reload"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+

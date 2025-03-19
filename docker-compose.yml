@@ -1,0 +1,28 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: robleaustral_back
+    ports:
+      - "4008:4008"
+    networks:
+      - redroble
+
+  frontend:
+    build:
+      context: ./frontend/robleaustral
+      dockerfile: Dockerfile
+    container_name: robleaustral_front
+    ports:
+      - "3008:3008"
+    networks:
+      - redroble
+
+volumes:
+  data:
+    external: false
+
+networks:
+  redroble:
+    name: redroble
